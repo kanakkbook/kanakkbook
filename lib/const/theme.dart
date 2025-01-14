@@ -29,7 +29,7 @@ class AppTheme {
       primaryColor: Colors.indigo,
       textTheme: TextTheme(
     headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-    bodyMedium: TextStyle(fontSize: 16, color: Colors.black),
+    bodyMedium: TextStyle(fontSize: 13, color: Colors.black),
     bodySmall: TextStyle(fontSize: 10, color: Colors.black),
     labelSmall:TextStyle(fontSize: 16, color: Colors.grey[400]) ,
     titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
