@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/theme.dart';
 import 'package:kanakk_book/custom_widgets/custom_app_bar.dart';
+import 'package:kanakk_book/modules/bottom_navigation/bottom_navigation.dart';
 import 'package:kanakk_book/modules/login/home_screen/home_screen.dart';
 import 'package:kanakk_book/modules/login/login_screen.dart';
 
@@ -51,11 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-     // appBar: CustomAppBar(title:"Kanakk book"),
-      body: HomeScreen(),
+    return  MainScreen();
 // This trailing comma makes auto-formatting nicer for build methods.
 
-    );
+    
   }
 }
