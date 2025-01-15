@@ -45,7 +45,7 @@ class PrimaryTextfiled extends StatelessWidget {
               const BorderSide(color: ColorConstants.primary, width: 2.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(30.0),
           borderSide:
               const BorderSide(color: ColorConstants.primary, width: 2.0),
         ),
