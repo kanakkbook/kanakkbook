@@ -9,20 +9,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-    
-      
-      decoration: BoxDecoration(
-        gradient: ColorConstants.customGradient
-        
-
-      ),
-      child: Column(
+      decoration: const BoxDecoration(gradient: ColorConstants.customGradient),
+      child: const Column(
         children: [
+          Expanded(flex: 2, child: HomeHeader()),
           Expanded(
-            flex: 2,
-            child: HomeHeader()),
-          Expanded(
-            flex:5,
+            flex: 5,
             child: HomeCardList(),
           ),
         ],
