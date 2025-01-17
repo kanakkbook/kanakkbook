@@ -10,7 +10,8 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorConstants.whiteColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: ColorConstants.whiteColor),
+        automaticallyImplyLeading: false,
+        // iconTheme: IconThemeData(color: ColorConstants.whiteColor),
         backgroundColor: ColorConstants.primary,
         title: Text(
           'Profile',
@@ -24,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
-            vertical: 20,
+            vertical: 30,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,39 +36,18 @@ class ProfileScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(
-                        color: ColorConstants.greyColor,
+                        color: ColorConstants.greyColor.withOpacity(0.50),
                       )),
                   child: const Icon(
                     Icons.person_2_rounded,
-                    size: 100,color: ColorConstants.secondary,
+                    size: 100,
+                    color: ColorConstants.secondary,
                   ),
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 50,
               ),
-              const Text(
-                'Mahanas kk',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const Text(
-                'mahanas@gmail.com',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const Text(
-                '9845683324',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 40,),
               const ProfileListviewWidget(),
             ],
           ),
