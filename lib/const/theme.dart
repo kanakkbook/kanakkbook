@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kanakk_book/const/color_constants.dart';
 
 class AppTheme {
   static ThemeData get lightMood => ThemeData(
@@ -17,21 +18,22 @@ class AppTheme {
           borderRadius:  BorderRadius.all(Radius.circular(4)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color:  Color.fromARGB(255, 25, 47, 174), width: 1),
+          borderSide: BorderSide(color:ColorConstants.primary  , width: 1),
           borderRadius:  BorderRadius.all(Radius.circular(4)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color:  Color.fromARGB(255, 25, 47, 174), width: 1),
+          borderSide: BorderSide(color:  ColorConstants.primary, width: 1),
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
       ),
       popupMenuTheme: PopupMenuThemeData(color:Colors.grey, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
-      primaryColor: Colors.indigo,
+      primaryColor:ColorConstants.primary,
       textTheme: TextTheme(
     headlineLarge: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
     bodyMedium: const TextStyle(fontSize: 13, color: Colors.black),
     bodySmall: const TextStyle(fontSize: 10, color: Colors.black),
-    labelSmall:TextStyle(fontSize: 16, color: Colors.grey[400]) ,
+    labelMedium:TextStyle(fontSize: 16, color: Colors.grey[400]) ,
+    labelSmall:TextStyle(fontSize: 12, color: Colors.grey[400]) ,
     titleLarge: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
     titleMedium: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     titleSmall: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
@@ -45,11 +47,11 @@ class AppTheme {
       colorScheme: ColorScheme.fromSwatch().copyWith(
         scrim: Colors.black,
         background: Colors.grey[100],
-        primary: const Color.fromARGB(255, 25, 47, 174),
-        secondary: const Color.fromARGB(255, 80, 44, 143),
-        surface: Colors.blueGrey[100],
-        onPrimary: const Color.fromARGB(178, 27, 29, 161),
-        onSecondary: Colors.deepPurple[300],
+        primary: ColorConstants.primary,
+        secondary: ColorConstants.secondary,
+        surface: ColorConstants.whiteOpacity,
+        onPrimary: ColorConstants.primary,
+        onSecondary: ColorConstants.secondary,
         onSurface: const Color.fromARGB(255, 64, 217, 251),
         onBackground: const Color.fromARGB(255, 71, 70, 70),
         brightness: Brightness.light,

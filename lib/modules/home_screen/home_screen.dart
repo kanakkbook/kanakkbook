@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
-import 'package:kanakk_book/modules/login/home_screen/elements/home_card_list.dart';
-import 'package:kanakk_book/modules/login/home_screen/elements/home_header.dart';
+import 'package:kanakk_book/modules/home_screen/elements/home_card_list.dart';
+import 'package:kanakk_book/modules/home_screen/elements/home_header.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

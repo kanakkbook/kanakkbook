@@ -7,13 +7,14 @@ class CustomTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final String? hintText;
   final double? width;
+  final Widget? prefixIcon;
   const CustomTextField({
     super.key,
     required this.value,
     this.onChanged,
     this.labelText,
     this.hintText,
-    this.width,
+    this.width,this.prefixIcon
   });
 
   @override
@@ -24,6 +25,7 @@ class CustomTextField extends StatelessWidget {
         value: value,
         onChanged: onChanged,
         decoration: InputDecoration(
+          prefixIcon: prefixIcon,
           labelText: labelText,
           labelStyle: Theme.of(context).textTheme.labelSmall,
           hintText: hintText,
