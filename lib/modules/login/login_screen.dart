@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
 import 'package:kanakk_book/custom_widgets/primary_button.dart';
 import 'package:kanakk_book/custom_widgets/primary_textfiled.dart';
-import 'package:kanakk_book/modules/login/home_screen/home_screen.dart';
+import 'package:kanakk_book/modules/profile/screens/profile_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
+                          builder: (context) => const ProfileScreen(),
                         ));
                   },
                   backgroundColor: ColorConstants.primary,

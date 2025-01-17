@@ -16,5 +16,7 @@ static const primary=Color(0xFFf96302);
 static final Color whiteOpacity=Colors.white.withOpacity(.6);
 static const secondary=Color.fromARGB(255, 248, 158, 80);
 static Color whiteColor=const Color(0xffffffff);
+static Color greyColor=const Color(0xff808080);
+// static Color blackColor=const Color(0x00000000);
 
 }
