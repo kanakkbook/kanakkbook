@@ -7,6 +7,8 @@ class PrimaryButton extends StatelessWidget {
   final Color textColor;
   final double? borderRadius;
   final EdgeInsets padding;
+  final double? height;
+  final double? width;
 
   const PrimaryButton({
     Key? key,
@@ -15,12 +17,14 @@ class PrimaryButton extends StatelessWidget {
     this.backgroundColor = Colors.blue,
     this.textColor = Colors.white,
     this.borderRadius,
-   required this.padding,
+   required this.padding,this.height,this.width
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      height: height,
+      minWidth: width,
       onPressed: onPressed,
       color: backgroundColor,
       shape: RoundedRectangleBorder(

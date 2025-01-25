@@ -25,16 +25,16 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 40),
                 child: Image.asset('lib/assets/images/login.png'),
               )),
-              const Text(
+               Text(
                 'LOGIN',
                 style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
+                  fontSize: 22,
+                  color:ColorConstants.primary.withOpacity(.7),
                   fontWeight: FontWeight.w700,
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               const PrimaryTextfiled(
                 hintText: 'Email',
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               const PrimaryTextfiled(
                 prefixIcon: Icon(
@@ -58,26 +58,25 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 35,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: PrimaryButton(
-                  text: 'LOGIN',
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MainScreen(),
-                        ));
-                  },
-                  backgroundColor: ColorConstants.primary,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 15,
-                  ),
-                  borderRadius: 30,
+              PrimaryButton(
+                height: 10,
+                width: 200,
+                text: 'LOGIN',
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainScreen(),
+                      ));
+                },
+                backgroundColor: ColorConstants.secondary,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 15,
                 ),
+                borderRadius: 15,
               ),
               const SizedBox(
                 height: 20,

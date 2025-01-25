@@ -40,14 +40,14 @@ class PrimaryTextfiled extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(12.0),
           borderSide:
-              const BorderSide(color: ColorConstants.primary, width: 2.0),
+               BorderSide(color:Colors.grey[300]!, width: 0.5),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(12.0),
           borderSide:
-              const BorderSide(color: ColorConstants.primary, width: 2.0),
+              const BorderSide(color: ColorConstants.secondary, width: .5),
         ),
       ),
       style: const TextStyle(
