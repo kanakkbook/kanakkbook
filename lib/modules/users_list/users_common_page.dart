@@ -9,8 +9,8 @@ class UsersCommonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical:  8.0,horizontal: 3),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical:  8.0,horizontal: 3),
           child: CustomTextField(value: "",prefixIcon:Icon(Icons.search) ,hintText: "Search",),
         ),
         SizedBox(

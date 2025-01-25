@@ -3,7 +3,6 @@ import 'package:kanakk_book/const/color_constants.dart';
 import 'package:kanakk_book/custom_widgets/primary_button.dart';
 import 'package:kanakk_book/custom_widgets/primary_textfiled.dart';
 import 'package:kanakk_book/modules/bottom_navigation/bottom_navigation.dart';
-import 'package:kanakk_book/modules/home_screen/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
