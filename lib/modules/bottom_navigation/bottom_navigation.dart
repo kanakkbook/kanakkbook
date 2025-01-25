@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
       extendBody: true,
       bottomNavigationBar: AnimatedNotchBottomBar(
         notchBottomBarController: notchBottomBarController,
-        bottomBarItems: const [
+        bottomBarItems:  [
           BottomBarItem(
             inActiveItem: Icon(
               Icons.home_filled,
@@ -47,9 +47,16 @@ class MainScreen extends StatelessWidget {
                 color: ColorConstants.primary,
               ),
             ),
-            activeItem: Icon(
-              Icons.star,
-              color: ColorConstants.secondary,
+            activeItem: InkWell(
+              onTap: ()=> Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainScreen(),
+                      )),
+              child: Icon(
+                Icons.add,
+                color: ColorConstants.secondary,
+              ),
             ),
           ),
           BottomBarItem(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
-import 'package:kanakk_book/custom_widgets/custom_text_field.dart';
+import 'package:kanakk_book/custom_widgets/primary_textfiled.dart';
 
 class UsersCommonPage extends StatelessWidget {
   const UsersCommonPage({super.key});
@@ -11,10 +11,10 @@ class UsersCommonPage extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.symmetric(vertical:  8.0,horizontal: 3),
-          child: CustomTextField(value: "",prefixIcon:Icon(Icons.search) ,hintText: "Search",),
+          child: PrimaryTextfiled(prefixIcon:Icon(Icons.search) ,hintText: "Search",),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height-120,
+          height: MediaQuery.of(context).size.height-215,
           child: ListView(
             children: [
               for(int i=0;i<10;i++)

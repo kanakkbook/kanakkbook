@@ -52,7 +52,7 @@ class AppTheme {
         surface: ColorConstants.whiteOpacity,
         onPrimary: ColorConstants.primary,
         onSecondary: ColorConstants.secondary,
-        onSurface: const Color.fromARGB(255, 64, 217, 251),
+        onSurface: Colors.white,
         onBackground: const Color.fromARGB(255, 71, 70, 70),
         brightness: Brightness.light,
         error: const Color.fromARGB(255, 98, 11, 4),
