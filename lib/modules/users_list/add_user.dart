@@ -11,7 +11,9 @@ class AddUserForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Add user",),
+      appBar: CustomAppBar(
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios_sharp,color: Colors.white,) ,onPressed: ()=>Navigator.pop(context)),
+        title: "Add user",trailering: Icon(Icons.person_add_alt_1,color: Colors.white,),),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

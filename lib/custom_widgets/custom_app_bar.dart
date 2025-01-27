@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
-
-  const CustomAppBar({super.key, this.title});
+  final Widget? leading;
+  final Widget? trailering;
+  const CustomAppBar({super.key, this.title,this.leading,this.trailering});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,9 +18,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(Icons.menu, color: Colors.white),
+          leading??SizedBox.shrink(),
           Text(title ?? "", style: Theme.of(context).textTheme.titleMedium),
-          const Icon(Icons.settings, color: Colors.white),
+          trailering??SizedBox.shrink(),
         ],
       ),
     );
