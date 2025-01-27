@@ -4,7 +4,8 @@ import 'package:kanakk_book/const/color_constants.dart';
 class AppTheme {
   static ThemeData get lightMood => ThemeData(
       // Text input theme
-      iconTheme:const IconThemeData(color:Colors.grey),
+      iconTheme:const IconThemeData(color:Colors.black),
+      buttonTheme: ButtonThemeData(buttonColor:  ColorConstants.secondary),
       scrollbarTheme: ScrollbarThemeData(thumbColor: MaterialStateProperty.all<Color>(Colors.grey), trackColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 25, 47, 174)), trackVisibility: MaterialStateProperty.all<bool>(false)),
       inputDecorationTheme: const InputDecorationTheme(
         filled: true,
@@ -41,7 +42,7 @@ class AppTheme {
     
   ),
       // Card Theme
-      cardTheme: CardTheme(color:Colors.grey[200], elevation: 1, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: const BorderSide(color: Colors.transparent))),
+      cardTheme: CardTheme(color:Colors.white, elevation: 1, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4), side: const BorderSide(color: Colors.transparent))),
       // Background Color
       scaffoldBackgroundColor: Colors.grey[100],
       colorScheme: ColorScheme.fromSwatch().copyWith(

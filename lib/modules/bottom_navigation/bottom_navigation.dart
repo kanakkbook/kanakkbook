@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
 import 'package:kanakk_book/modules/home_screen/home_screen.dart';
 import 'package:kanakk_book/modules/profile/profile_screen.dart';
+import 'package:kanakk_book/modules/users_list/add_user.dart';
 import 'package:kanakk_book/modules/users_list/user_list_page.dart';
 
 class MainScreen extends StatelessWidget {
@@ -51,7 +52,7 @@ class MainScreen extends StatelessWidget {
               onTap: ()=> Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MainScreen(),
+                        builder: (context) => const AddUserForm(),
                       )),
               child: Icon(
                 Icons.add,

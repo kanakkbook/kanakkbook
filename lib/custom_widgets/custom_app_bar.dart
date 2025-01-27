@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Icon(Icons.menu, color: Colors.white),
-          Text(title ?? "", style: Theme.of(context).textTheme.titleSmall),
+          Text(title ?? "", style: Theme.of(context).textTheme.titleMedium),
           const Icon(Icons.settings, color: Colors.white),
         ],
       ),

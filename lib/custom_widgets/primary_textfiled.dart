@@ -10,6 +10,7 @@ class PrimaryTextfiled extends StatelessWidget {
     this.width = double.infinity,
     this.prefixIcon,
     this.suffixIcon,
+    this.maxLines=1
   });
 
   final String? labelText;
@@ -18,11 +19,13 @@ class PrimaryTextfiled extends StatelessWidget {
   final double? width;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChanged,
+      maxLines: maxLines,
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
@@ -33,6 +36,7 @@ class PrimaryTextfiled extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         border: InputBorder.none,
+        
         contentPadding: const EdgeInsets.symmetric(
           vertical: 18.0,
           horizontal: 15,

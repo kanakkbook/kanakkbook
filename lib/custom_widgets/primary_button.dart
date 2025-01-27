@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kanakk_book/const/color_constants.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
@@ -6,7 +7,7 @@ class PrimaryButton extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final double? borderRadius;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   final double? height;
   final double? width;
 
@@ -14,15 +15,16 @@ class PrimaryButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor = Colors.blue,
+    this.backgroundColor =ColorConstants.secondary,
     this.textColor = Colors.white,
     this.borderRadius,
-   required this.padding,this.height,this.width
+    this.padding,this.height=50,this.width
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      
       height: height,
       minWidth: width,
       onPressed: onPressed,
