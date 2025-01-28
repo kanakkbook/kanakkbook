@@ -13,7 +13,7 @@ class UsersCommonPage extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.symmetric(vertical:  8.0,horizontal: 3),
-          child: PrimaryTextfiled(prefixIcon:Icon(Icons.search) ,hintText: "Search",),
+          child: PrimaryTextfield(prefixIcon:Icon(Icons.search) ,hintText: "Search",),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height-215,

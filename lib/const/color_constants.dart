@@ -18,6 +18,7 @@ static const secondary=Color.fromARGB(255, 248, 158, 80);
 static const tertiary=Color.fromARGB(255, 247, 208, 176);
 static Color whiteColor=const Color(0xffffffff);
 static Color greyColor=const Color(0xff808080);
+static Color lightGreyColr=Colors.grey[400]!;
 // static Color blackColor=const Color(0x00000000);
 
 }

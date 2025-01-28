@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const PrimaryTextfiled(
+              const PrimaryTextfield(
                 hintText: 'Email',
                 prefixIcon: Icon(
                   Icons.email_outlined,
@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const PrimaryTextfiled(
+              const PrimaryTextfield(
                 prefixIcon: Icon(
                   Icons.lock_open,
                   size: 16,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
 
-class PrimaryTextfiled extends StatelessWidget {
-  const PrimaryTextfiled({
+class PrimaryTextfield extends StatelessWidget {
+  const PrimaryTextfield({
     super.key,
     this.labelText,
     this.onChanged,
@@ -10,7 +10,8 @@ class PrimaryTextfiled extends StatelessWidget {
     this.width = double.infinity,
     this.prefixIcon,
     this.suffixIcon,
-    this.maxLines=1
+    this.maxLines = 1,
+    this.icon,
   });
 
   final String? labelText;
@@ -19,6 +20,7 @@ class PrimaryTextfiled extends StatelessWidget {
   final double? width;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final Widget? icon;
   final int? maxLines;
 
   @override
@@ -29,33 +31,36 @@ class PrimaryTextfiled extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
-        hintStyle:Theme.of(context).textTheme.labelSmall ,
+        icon: icon,
+        hintStyle: Theme.of(context).textTheme.bodyMedium,
         filled: true,
         fillColor: Colors.white,
         border: InputBorder.none,
-        
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 18.0,
-          horizontal: 15,
+        contentPadding: EdgeInsets.only(
+          top: maxLines! > 1 ? 16.0 : 12.0, // Adjust top padding for multiline
+          bottom: 12.0,
+          left: 15.0,
+          right: 15.0,
         ),
         prefixIcon: prefixIcon,
+        prefixIconConstraints: BoxConstraints(
+          minWidth: 40,
+          minHeight: maxLines! > 1 ? 60 : 20, // Adjust height for multiline
+        ),
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
-          borderSide:
-               BorderSide(color:Colors.grey[300]!, width: 0.5),
+          borderSide: BorderSide(color: Colors.grey[300]!, width: 0.5),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
-          borderSide:
-              const BorderSide(color: ColorConstants.secondary, width: .5),
+          borderSide: const BorderSide(color: ColorConstants.secondary, width: 0.5),
         ),
       ),
       style: const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
       ),
-      cursorColor: Colors.blue,
-    );
+      cursorColor: ColorConstants.secondary );
   }
 }

@@ -18,12 +18,12 @@ enableBack: true,title: "Add user",trailering: Icon(Icons.person_add_alt_1,color
         child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 10,
           children: [
-            PrimaryTextfiled(hintText: "user name",prefixIcon: Icon(Icons.person),),
-            PrimaryTextfiled(hintText: "Phone numer",prefixIcon: Icon(Icons.phone),),
+            PrimaryTextfield(hintText: "user name",prefixIcon: Icon(Icons.person),),
+            PrimaryTextfield(hintText: "Phone numer",prefixIcon: Icon(Icons.phone),),
            
            Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
              children: [
-              Text("  Gender",style: Theme.of(context).textTheme.labelSmall,),
+              Text(" Gender",style: Theme.of(context).textTheme.bodyMedium),
               SizedBox(height: 5,),
                Row(
                  children: [
@@ -45,7 +45,7 @@ enableBack: true,title: "Add user",trailering: Icon(Icons.person_add_alt_1,color
                ),
              ],
            ),
-           PrimaryTextfiled(hintText:"email",prefixIcon: Icon(Icons.email),),
+           PrimaryTextfield(hintText:"email",prefixIcon: Icon(Icons.email),),
            InkWell(onTap: ()async =>   await DatePicker.showSimpleDatePicker(
                 context,
                 // initialDate: DateTime(2020),
@@ -62,14 +62,14 @@ enableBack: true,title: "Add user",trailering: Icon(Icons.person_add_alt_1,color
                   children: [
                     Icon(Icons.calendar_month),
                     SizedBox(width: 8,),
-                    Text("12/12/2023",style: Theme.of(context).textTheme.labelSmall,)
+                    Text("12/12/2023",style: Theme.of(context).textTheme.bodyMedium,)
                   ],
                 ),
               ),
              ),
            ),
-            PrimaryTextfiled(hintText:"company",prefixIcon: Icon(Icons.business),),
-            PrimaryTextfiled(hintText:"address",prefixIcon: Icon(Icons.home),maxLines: 6,),
+            PrimaryTextfield(hintText:"company",prefixIcon: Icon(Icons.business),),
+            PrimaryTextfield(hintText:"address",prefixIcon: Icon(Icons.home),maxLines: 6,),
             PrimaryButton(text: "Save", onPressed: (){}, width: double.infinity,borderRadius: 12,)
           ],
         ),
