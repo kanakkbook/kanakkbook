@@ -4,7 +4,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Widget? leading;
   final Widget? trailering;
-  const CustomAppBar({super.key, this.title,this.leading,this.trailering});
+  final bool? enableBack;
+  const CustomAppBar({super.key,this.enableBack, this.title,this.leading,this.trailering});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          if(enableBack==true) IconButton(onPressed: ()=>Navigator.pop(context), icon: Icon(Icons.arrow_back_ios_new_outlined,color: Colors.white,)),
           leading??SizedBox.shrink(),
           Text(title ?? "", style: Theme.of(context).textTheme.titleMedium),
           trailering??SizedBox.shrink(),

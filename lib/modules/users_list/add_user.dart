@@ -12,30 +12,36 @@ class AddUserForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios_sharp,color: Colors.white,) ,onPressed: ()=>Navigator.pop(context)),
-        title: "Add user",trailering: Icon(Icons.person_add_alt_1,color: Colors.white,),),
+enableBack: true,title: "Add user",trailering: Icon(Icons.person_add_alt_1,color: Colors.white,),),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 10,
           children: [
             PrimaryTextfiled(hintText: "user name",prefixIcon: Icon(Icons.person),),
             PrimaryTextfiled(hintText: "Phone numer",prefixIcon: Icon(Icons.phone),),
-           Row(
+           
+           Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
              children: [
-               Expanded(
-                 child: Card(color: Colors.white, child: Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Icon(Icons.male,color: Colors.black,size: 30,),
-                 ),),
-                 
-               ),
-               Expanded(
-                 child: Card(color: Colors.white, child: Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Icon(Icons.female,color: Colors.black,size: 30,),
-                 ),),
-                 
+              Text("  Gender",style: Theme.of(context).textTheme.labelSmall,),
+              SizedBox(height: 5,),
+               Row(
+                 children: [
+                   Expanded(
+                     child: Card(color: Colors.white, child: Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Icon(Icons.male,color: Colors.black,size: 30,),
+                     ),),
+                     
+                   ),
+                   Expanded(
+                     child: Card(color: Colors.white, child: Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Icon(Icons.female,color: Colors.black,size: 30,),
+                     ),),
+                     
+                   ),
+                 ],
                ),
              ],
            ),
@@ -56,7 +62,7 @@ class AddUserForm extends StatelessWidget {
                   children: [
                     Icon(Icons.calendar_month),
                     SizedBox(width: 8,),
-                    Text("12/12/2023")
+                    Text("12/12/2023",style: Theme.of(context).textTheme.labelSmall,)
                   ],
                 ),
               ),

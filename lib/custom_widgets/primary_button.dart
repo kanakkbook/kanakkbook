@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
 
 class PrimaryButton extends StatelessWidget {
-  final String text;
+  final String? text;
+  final IconData? icon;
   final VoidCallback onPressed;
   final Color backgroundColor;
   final Color textColor;
@@ -13,8 +14,9 @@ class PrimaryButton extends StatelessWidget {
 
   const PrimaryButton({
     Key? key,
-    required this.text,
+     this.text,
     required this.onPressed,
+    this.icon,
     this.backgroundColor =ColorConstants.secondary,
     this.textColor = Colors.white,
     this.borderRadius,
@@ -33,13 +35,18 @@ class PrimaryButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius??14),
       ),
       padding: padding,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: textColor,
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-        ),
+      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if(icon!=null)Icon(icon),
+        if(text!=null)  Text(
+            text??"",
+            style: TextStyle(
+              color: textColor,
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
       ),
     );
   }

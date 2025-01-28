@@ -29,10 +29,7 @@ class PrimaryTextfiled extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
-        hintStyle: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-        ),
+        hintStyle:Theme.of(context).textTheme.labelSmall ,
         filled: true,
         fillColor: Colors.white,
         border: InputBorder.none,
