@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
 import 'package:kanakk_book/modules/home_screen/view_model/home_view_model.dart';
+import 'package:kanakk_book/modules/sales/sales_data_table.dart';
 import 'package:provider/provider.dart';
 
 class HomeCardList extends StatelessWidget {
@@ -21,31 +22,38 @@ class HomeCardList extends StatelessWidget {
           runSpacing: 50,
           children: [
             for (var e in context.read<HomeViewModel>().homeWidgets)
-              SizedBox(
-                height: 80,width: 80,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10), // Add border radius
-                  ),
-                  elevation: 2,
-                  color: Colors.white,
-                  shadowColor: ColorConstants.secondary,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                         Icon(
-                          e.icon,
-                          color: ColorConstants.secondary,
-                        ),
-                        Text(
-                          e.name??"",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(color: ColorConstants.primary),
-                        )
-                      ],
+              InkWell(
+                onTap: ()=>Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SalesTable(),
+                      )),
+                child: SizedBox(
+                  height: 80,width: 80,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10), // Add border radius
+                    ),
+                    elevation: 2,
+                    color: Colors.white,
+                    shadowColor: ColorConstants.secondary,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                           Icon(
+                            e.icon,
+                            color: ColorConstants.secondary,
+                          ),
+                          Text(
+                            e.name??"",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                ?.copyWith(color: ColorConstants.primary),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
