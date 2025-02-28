@@ -34,8 +34,8 @@ class ProfileListviewWidget extends StatelessWidget {
       child: Column(
         children: [
           const ProfileExpansiontileWidget(
-            userName: 'Anupama',
-            email: 'anupama@gmail.com',
+            userName: 'Muhammed',
+            email: 'muhammed@gmail.com',
             phoneNumber: '9867434467',
           ),
           const SizedBox(

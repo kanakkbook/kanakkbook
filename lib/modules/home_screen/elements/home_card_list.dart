@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
+import 'package:kanakk_book/modules/home_screen/view_model/home_view_model.dart';
+import 'package:provider/provider.dart';
 
 class HomeCardList extends StatelessWidget {
   const HomeCardList({super.key});
@@ -18,30 +20,33 @@ class HomeCardList extends StatelessWidget {
           spacing: 50,
           runSpacing: 50,
           children: [
-            for (int i = 0; i < 6; i++)
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Add border radius
-                ),
-                elevation: 2,
-                color: Colors.white,
-                shadowColor: ColorConstants.secondary,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      const Icon(
-                        Icons.people_alt,
-                        color: ColorConstants.secondary,
-                      ),
-                      Text(
-                        "home",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall
-                            ?.copyWith(color: ColorConstants.primary),
-                      )
-                    ],
+            for (var e in context.read<HomeViewModel>().homeWidgets)
+              SizedBox(
+                height: 80,width: 80,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // Add border radius
+                  ),
+                  elevation: 2,
+                  color: Colors.white,
+                  shadowColor: ColorConstants.secondary,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                         Icon(
+                          e.icon,
+                          color: ColorConstants.secondary,
+                        ),
+                        Text(
+                          e.name??"",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(color: ColorConstants.primary),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               )

@@ -52,7 +52,7 @@ class _UserListPageState extends State<UserListPage>
                       'Suppliers',style:TextStyle(fontSize: 15, fontWeight: FontWeight.bold)
                     ),
                   ),
-                )
+                ),
               ],
               controller: _tabController,
             ),
@@ -60,7 +60,7 @@ class _UserListPageState extends State<UserListPage>
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: const [UsersCommonPage(), UsersCommonPage()],
+              children: const [UsersCommonPage(), UsersCommonPage(),],
             ),
           )
         ],

@@ -20,8 +20,6 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-// Sample key from json to show how
-// we recieve the data from backend
   int? get id => throw _privateConstructorUsedError;
   String? get userName => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
@@ -144,8 +142,6 @@ class _$UserModelImpl implements _UserModel {
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
-// Sample key from json to show how
-// we recieve the data from backend
   @override
   final int? id;
   @override
@@ -202,8 +198,6 @@ abstract class _UserModel implements UserModel {
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
-// Sample key from json to show how
-// we recieve the data from backend
   @override
   int? get id;
   @override

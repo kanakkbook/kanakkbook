@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/theme.dart';
+import 'package:kanakk_book/modules/home_screen/view_model/home_view_model.dart';
 import 'package:kanakk_book/modules/login/login_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => HomeViewModel()),
+    ],
+  child:  MyApp(),
+  ),
+    );
 }
 
 class MyApp extends StatelessWidget {
