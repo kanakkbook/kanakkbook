@@ -10,9 +10,13 @@ class HomeCardModel with _$HomeCardModel {
   const factory HomeCardModel({
      int? uid,
      String? name,
+    @WidgetConverter() Widget? screen,
     @IconDataConverter() IconData? icon,
      String? route,
   }) = _HomeCardModel;
   factory HomeCardModel.fromJson(Map<String, dynamic> json) =>
       _$HomeCardModelFromJson(json);
 }
+
+
+

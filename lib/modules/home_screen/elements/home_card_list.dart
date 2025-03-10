@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kanakk_book/const/color_constants.dart';
 import 'package:kanakk_book/modules/home_screen/view_model/home_view_model.dart';
-import 'package:kanakk_book/modules/sales/sales_data_table.dart';
 import 'package:provider/provider.dart';
 
 class HomeCardList extends StatelessWidget {
@@ -26,7 +25,7 @@ class HomeCardList extends StatelessWidget {
                 onTap: ()=>Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SalesTable(),
+                        builder: (context) => e.screen??SizedBox.shrink(),
                       )),
                 child: SizedBox(
                   height: 80,width: 80,

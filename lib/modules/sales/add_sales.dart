@@ -42,7 +42,7 @@ enableBack: true,title: "Sales entry"),
            ),
             PrimaryTextfield(hintText: "₹ sale",prefixIcon: Icon(Icons.shopping_bag_outlined),),
            PrimaryTextfield(hintText: "₹ income",prefixIcon: Icon(Icons.attach_money),),
-           
+           PrimaryTextfield(hintText: "Customer",prefixIcon: Icon(Icons.attach_money),),
           Spacer(),
             PrimaryButton(text: "Save", onPressed: (){}, width: double.infinity,borderRadius: 12,)
           ],

@@ -22,6 +22,8 @@ HomeCardModel _$HomeCardModelFromJson(Map<String, dynamic> json) {
 mixin _$HomeCardModel {
   int? get uid => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @WidgetConverter()
+  Widget? get screen => throw _privateConstructorUsedError;
   @IconDataConverter()
   IconData? get icon => throw _privateConstructorUsedError;
   String? get route => throw _privateConstructorUsedError;
@@ -45,6 +47,7 @@ abstract class $HomeCardModelCopyWith<$Res> {
   $Res call(
       {int? uid,
       String? name,
+      @WidgetConverter() Widget? screen,
       @IconDataConverter() IconData? icon,
       String? route});
 }
@@ -66,6 +69,7 @@ class _$HomeCardModelCopyWithImpl<$Res, $Val extends HomeCardModel>
   $Res call({
     Object? uid = freezed,
     Object? name = freezed,
+    Object? screen = freezed,
     Object? icon = freezed,
     Object? route = freezed,
   }) {
@@ -78,6 +82,10 @@ class _$HomeCardModelCopyWithImpl<$Res, $Val extends HomeCardModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      screen: freezed == screen
+          ? _value.screen
+          : screen // ignore: cast_nullable_to_non_nullable
+              as Widget?,
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -101,6 +109,7 @@ abstract class _$$HomeCardModelImplCopyWith<$Res>
   $Res call(
       {int? uid,
       String? name,
+      @WidgetConverter() Widget? screen,
       @IconDataConverter() IconData? icon,
       String? route});
 }
@@ -120,6 +129,7 @@ class __$$HomeCardModelImplCopyWithImpl<$Res>
   $Res call({
     Object? uid = freezed,
     Object? name = freezed,
+    Object? screen = freezed,
     Object? icon = freezed,
     Object? route = freezed,
   }) {
@@ -132,6 +142,10 @@ class __$$HomeCardModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      screen: freezed == screen
+          ? _value.screen
+          : screen // ignore: cast_nullable_to_non_nullable
+              as Widget?,
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -148,7 +162,11 @@ class __$$HomeCardModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HomeCardModelImpl implements _HomeCardModel {
   const _$HomeCardModelImpl(
-      {this.uid, this.name, @IconDataConverter() this.icon, this.route});
+      {this.uid,
+      this.name,
+      @WidgetConverter() this.screen,
+      @IconDataConverter() this.icon,
+      this.route});
 
   factory _$HomeCardModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HomeCardModelImplFromJson(json);
@@ -158,6 +176,9 @@ class _$HomeCardModelImpl implements _HomeCardModel {
   @override
   final String? name;
   @override
+  @WidgetConverter()
+  final Widget? screen;
+  @override
   @IconDataConverter()
   final IconData? icon;
   @override
@@ -165,7 +186,7 @@ class _$HomeCardModelImpl implements _HomeCardModel {
 
   @override
   String toString() {
-    return 'HomeCardModel(uid: $uid, name: $name, icon: $icon, route: $route)';
+    return 'HomeCardModel(uid: $uid, name: $name, screen: $screen, icon: $icon, route: $route)';
   }
 
   @override
@@ -175,13 +196,14 @@ class _$HomeCardModelImpl implements _HomeCardModel {
             other is _$HomeCardModelImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.screen, screen) || other.screen == screen) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.route, route) || other.route == route));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, name, icon, route);
+  int get hashCode => Object.hash(runtimeType, uid, name, screen, icon, route);
 
   /// Create a copy of HomeCardModel
   /// with the given fields replaced by the non-null parameter values.
@@ -203,6 +225,7 @@ abstract class _HomeCardModel implements HomeCardModel {
   const factory _HomeCardModel(
       {final int? uid,
       final String? name,
+      @WidgetConverter() final Widget? screen,
       @IconDataConverter() final IconData? icon,
       final String? route}) = _$HomeCardModelImpl;
 
@@ -213,6 +236,9 @@ abstract class _HomeCardModel implements HomeCardModel {
   int? get uid;
   @override
   String? get name;
+  @override
+  @WidgetConverter()
+  Widget? get screen;
   @override
   @IconDataConverter()
   IconData? get icon;
