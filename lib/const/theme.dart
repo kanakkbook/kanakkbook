@@ -31,6 +31,8 @@ class AppTheme {
       primaryColor:ColorConstants.primary,
       textTheme: TextTheme(
     headlineLarge: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+    headlineMedium: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    headlineSmall: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
     bodyMedium: const TextStyle(fontSize: 13, color: Colors.black),
     bodySmall: const TextStyle(fontSize: 10, color: Colors.black),
     labelMedium:TextStyle(fontSize: 16, color: Colors.grey[400]) ,

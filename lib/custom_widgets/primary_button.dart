@@ -6,6 +6,7 @@ class PrimaryButton extends StatelessWidget {
   final IconData? icon;
   final VoidCallback onPressed;
   final Color backgroundColor;
+  final Color? iconColor;
   final Color textColor;
   final double? borderRadius;
   final EdgeInsets? padding;
@@ -20,6 +21,7 @@ class PrimaryButton extends StatelessWidget {
     this.backgroundColor =ColorConstants.secondary,
     this.textColor = Colors.white,
     this.borderRadius,
+    this.iconColor,
     this.padding,this.height=50,this.width
   }) : super(key: key);
 
@@ -37,7 +39,7 @@ class PrimaryButton extends StatelessWidget {
       padding: padding,
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if(icon!=null)Icon(icon),
+          if(icon!=null)Icon(icon,color: iconColor??ColorConstants.secondary,),
         if(text!=null)  Text(
             text??"",
             style: TextStyle(

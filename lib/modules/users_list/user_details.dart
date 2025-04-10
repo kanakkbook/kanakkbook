@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:kanakk_book/const/color_constants.dart';
+import 'package:kanakk_book/const/enums.dart';
 import 'package:kanakk_book/custom_widgets/custom_app_bar.dart';
 import 'package:kanakk_book/custom_widgets/primary_button.dart';
 import 'package:kanakk_book/models/user_model.dart';
+import 'package:kanakk_book/modules/users_list/elements.dart/summary_card.dart';
+import 'package:kanakk_book/modules/users_list/user_details_grid_view.dart';
+import 'package:kanakk_book/modules/users_list/user_details_table_view.dart';
+import 'package:kanakk_book/modules/users_list/user_transaction_entry.dart';
+import 'package:kanakk_book/modules/users_list/view_model/users_view_model.dart';
+import 'package:provider/provider.dart';
 
-class UserDetails extends StatelessWidget {
+class UserDetails extends HookWidget {
   final UserModel? user;
   const UserDetails({super.key,this.user});
 
   @override
   Widget build(BuildContext context) {
+    final view=useState(ViewMode.table_view);
     return  Scaffold(
       appBar: CustomAppBar(
         enableBack: true,
@@ -36,28 +45,23 @@ class UserDetails extends StatelessWidget {
               ],),
             ),
           ),
-          SizedBox(height: 10,),
-           SizedBox(
-          height: MediaQuery.of(context).size.height-215,
-          child: ListView(
-            children: [
-              for(int i=0;i<10;i++)
-              Card(
-                child: ListTile(
-                  tileColor: Colors.white,
-                  title: Text("1001",style: Theme.of(context).textTheme.bodyMedium,),
-                  subtitle: Text("12/3/2024 / Receipt",style: Theme.of(context).textTheme.labelSmall,),
-                  trailing: Column(
-                    children: [
-                       Text("+ 100",style: Theme.of(context).textTheme.labelSmall),
-                      Text("₹ 100",style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Theme.of(context).colorScheme.error),),
-                    ],
-                  ),
-                  
-                ),
-              )
-            ],
+          SizedBox(height: 5,),
+         
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              spacing: 5,
+              children: [
+                 ...context.read<UsersViewModel>().summaryDate.map((e)=>SummaryCard(title: e.title,subTitle: "₹${e.subtitle}",))
+                 
+              ],
+            ),
           ),
+          
+          SizedBox(height: 10,),
+          SizedBox(
+          height: MediaQuery.of(context).size.height-272,
+          child:view.value==ViewMode.table_view? UserDetailsTableView():UserDetailsGridView()
         ),
         SizedBox(height: 10,),
         Container(color: Colors.white,child: Row(
@@ -67,12 +71,24 @@ class UserDetails extends StatelessWidget {
             Expanded(child: PrimaryButton(
               borderRadius: 4,
               onPressed: (){},icon: Icons.print,backgroundColor: Colors.white,)),
+            Expanded(child: PrimaryButton(
+              borderRadius: 4,
+              onPressed: (){
+                view.value=view.value==ViewMode.grid_view?ViewMode.table_view:ViewMode.grid_view;
+              },icon: Icons.grid_view_outlined,backgroundColor: Colors.white,)),
             Expanded(
               flex: 2,
-              child: PrimaryButton(borderRadius: 4, onPressed: (){},text: "Receipt",backgroundColor: Colors.green[800]!,)),
+              child: PrimaryButton(borderRadius: 4, onPressed: (){
+                Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UserTransactionEntry(voucherType: VoucherType.receipt,),
+              ),
+            );
+              },text: "Receipt",backgroundColor: ColorConstants.greenColor,)),
             Expanded(
               flex: 2,
-              child: PrimaryButton(borderRadius: 4, onPressed: (){},text: "Payment",backgroundColor: Colors.red[800]!,)),
+              child: PrimaryButton(borderRadius: 4, onPressed: (){},text: "Payment",backgroundColor: ColorConstants.redColor,)),
           ],
         ),)
         ],
